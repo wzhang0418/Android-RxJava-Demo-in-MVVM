@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="propertyData"
+            type="com.apolis.wenzhao.rxjavamock.model.PropertyData"/>
+        <variable
+            name="adapter"
+            type="com.apolis.wenzhao.rxjavamock.adapter.AdapterRecyclerView" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/image_view_picture"
+            android:layout_width="120dp"
+            android:layout_height="100dp"
+            loadImage="@{propertyData.image}"/>
+
+        <TextView
+            android:id="@+id/text_view_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/image_view_picture"
+            android:text="@{propertyData.purchasePrice}"
+            tools:text="Price"
+            android:textColor="#000"
+            android:textSize="24dp"/>
+
+        <TextView
+            android:id="@+id/text_view_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/image_view_picture"
+            android:layout_below="@+id/text_view_price"
+            android:text="@{propertyData.address}"
+            tools:text="Address"/>
+
+    </RelativeLayout>
+
+</layout>
